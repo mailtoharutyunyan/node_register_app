@@ -17,8 +17,18 @@ module.exports.login = async function (req, res) {
             res.status(200).json({
                 success: true,
                 "message": "Login Succcessfully",
-                token: `Bearer ${token}`,
-                user: candidate
+                token: token,
+                user: {
+                    id:candidate._id,
+                    firstName:candidate.firstName,
+                    email:candidate.email,
+                    phone:candidate.phone,
+                    gender:candidate.gender,
+                    state:candidate.state,
+                    city:candidate.city,
+                    zip_code:candidate.zip_code,
+                    sale_number:candidate.sale_number,
+                }
             })
         } else {
             res.status(401).json({
@@ -64,8 +74,17 @@ module.exports.register = async function (req, res) {
             res.status(201).json({
                 success: true,
                 message: "Registration Successfully",
-                user: user,
-
+                data: {
+                    id:user.id,
+                    firstName:user.firstName,
+                    email:user.email,
+                    phone:user.phone,
+                    gender:user.gender,
+                    state:user.state,
+                    city:user.city,
+                    zip_code:user.zip_code,
+                    sale_number:user.sale_number,
+                },
             })
         } catch (e) {
             errorHandler(res, e)
