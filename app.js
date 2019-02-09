@@ -16,7 +16,7 @@ mongoose.connect(keys.mongoURI, {useCreateIndex: true, useNewUrlParser: true})
 
 
 app.use(require('morgan')('dev'));
-// app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(require('cors')());

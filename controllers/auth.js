@@ -44,6 +44,7 @@ module.exports.login = async function (req, res) {
                     zip_code: candidate.zip_code,
                     sale_number: candidate.sale_number,
                     register_type: candidate.register_type,
+                    imageSrc: candidate.imageSrc
                 }
             })
         } else {
@@ -53,20 +54,19 @@ module.exports.login = async function (req, res) {
         }
     } else {
         res.status(400).json({
-            message: 'Senc uzer arden ka',
+            // message: 'Senc uzer arden ka',
             success: false,
             message: "Please fill all fields",
             data: {}
         })
     }
-
 };
 
 module.exports.register = async function (req, res) {
     function isEmpty(obj) {
         for (var prop in obj) {
-            if (obj.hasOwnProperty(prop))
-                return false;
+            // if (obj.hasOwnProperty(prop))
+            //     return false;
         }
         return JSON.stringify(obj) === JSON.stringify({});
     }
@@ -104,6 +104,7 @@ module.exports.register = async function (req, res) {
             sale_number: req.body.sale_number,
             register_type: req.body.register_type,
             email: req.body.email,
+            imageSrc: req.file ? req.file.path : ' ',
             password: bcrypt.hashSync(password, salt)
         });
         try {
@@ -122,6 +123,7 @@ module.exports.register = async function (req, res) {
                     zip_code: user.zip_code,
                     sale_number: user.sale_number,
                     register_type: user.register_type,
+                    avatar:user.imageSrc,
 
                 },
             })
