@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
+const categoryRoutes = require('./routes/category');
 // const passport = require('passport');
 const keys = require('./config/keys');
 const app = express();
@@ -23,6 +24,7 @@ app.use(require('cors')());
 
 
 app.use('/api/auth', authRoutes);
+app.use('/api/', categoryRoutes);
 
 
 module.exports = app;
