@@ -31,7 +31,7 @@ module.exports.login = async function (req, res) {
             }, keys.jwt, {expiresIn: 60 * 60});//mi jam 60rope * 60varkyan
             res.status(200).json({
                 success: true,
-                "message": "Login Succcessfully",
+                message: "Login Succcessfully",
                 token: token,
                 user: {
                     id: candidate._id,

@@ -8,19 +8,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="@types/config" level="application" />
     <orderEntry type="library" name="@types/express" level="application" />
-    <orderEntry type="library" name="@types/mongodb" level="application" />
-    <orderEntry type="library" name="@types/node" level="application" />
-    <orderEntry type="library" name="@types/require-dir" level="application" />
-    <orderEntry type="library" name="@types/requirejs" level="application" />
-    <orderEntry type="library" name="@types/mongoose-promise" level="application" />
-    <orderEntry type="library" name="@types/serve-static" level="application" />
-    <orderEntry type="library" name="@types/express-serve-static-core" level="application" />
-    <orderEntry type="library" name="@types/mongoose-deep-populate" level="application" />
-    <orderEntry type="library" name="@types/mocha" level="application" />
-    <orderEntry type="library" name="@types/passport" level="application" />
-    <orderEntry type="library" name="@types/passport-jwt" level="application" />
     <orderEntry type="library" name="@types/multer" level="application" />
     <orderEntry type="library" name="@types/multer" level="application" />
     <orderEntry type="library" name="@types/express" level="application" />
