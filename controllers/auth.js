@@ -31,7 +31,7 @@ module.exports.login = async function (req, res) {
             }, keys.jwt, {expiresIn: 60 * 60});//mi jam 60rope * 60varkyan
             res.status(200).json({
                 success: true,
-                message: "Login Succcessfully",
+                message: "Login Successfully",
                 token: token,
                 user: {
                     id: candidate._id,
@@ -71,7 +71,7 @@ module.exports.register = async function (req, res) {
         return JSON.stringify(obj) === JSON.stringify({});
     }
 
-    if (isEmpty(req.body) || req.body.email ==null || req.body.password==null){
+    if (isEmpty(req.body) || req.body.email == null || req.body.password == null) {
         res.status(400).json({
             success: false,
             message: "Please fill all fields",
@@ -123,7 +123,7 @@ module.exports.register = async function (req, res) {
                     zip_code: user.zip_code,
                     sale_number: user.sale_number,
                     register_type: user.register_type,
-                    avatar:user.imageSrc,
+                    avatar: user.imageSrc,
 
                 },
             })
@@ -137,3 +137,7 @@ module.exports.register = async function (req, res) {
         }
     }
 };
+
+module.exports.findAll = async function (req,res) {
+
+}
